@@ -1,20 +1,33 @@
 const products = [
   {
-    name: "product 1",
-    price: "3.99",
+    name: "Hearty beans",
+    price: "1.99€",
+    market: "Local Market",
   },
   {
-    name: "product 2",
-    price: "3.99",
+    name: "Humble pizza",
+    price: "3.99€",
+    market: "Local Market",
   },
   {
-    name: "product 3",
-    price: "3.99",
+    name: "Biodegradable beans",
+    price: "7.00€",
+    market: "Great Mall",
   },
   {
-    name: "awesomo product",
-    price: "6.99",
-    market: "awesomo market",
+    name: "Posh Pizza",
+    price: "16.05€",
+    market: "Great Mall",
+  },
+  {
+    name: "Just beans",
+    price: "0.50€",
+    market: "Corner Shop",
+  },
+  {
+    name: "Just Pizza",
+    price: "3.50€",
+    market: "Corner Shop",
   },
 ];
 

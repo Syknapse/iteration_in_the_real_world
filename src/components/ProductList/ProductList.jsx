@@ -3,7 +3,6 @@ import "./productList.css";
 import codeSnippets from "./codeSnippets";
 
 const ProductList = ({ products }) => {
-  console.log("products: ", products);
   const [displayProducts, setDisplayProducts] = useState(products);
   const [snippet, setSnippet] = useState(codeSnippets["ALL"]);
 
@@ -14,42 +13,44 @@ const ProductList = ({ products }) => {
 
   const handleFilter = () => {
     const filteredProducts = products.filter(
-      (product) => product.market === "awesomo market"
+      (product) => product.market === "Great Mall"
     );
     setDisplayProducts(filteredProducts);
     setSnippet(codeSnippets["FILTER"]);
   };
 
-  console.log("----> displayProducts: ", displayProducts);
-
   return (
     <div className="root">
       <div className="buttons-container">
         <button onClick={() => handleDisplayAll()}>Show All</button>
-        <button onClick={() => handleFilter()}>filter()</button>
+        <button onClick={() => handleFilter()}>array.filter()</button>
       </div>
       <div className="info-container">
         {snippet.description && <p>{snippet.description}</p>}
         {snippet.code && <code>{snippet.code}</code>}
-        {snippet.href && (
-          <div className="links">
-            <a href={snippet.href.github} target="_blank" rel="noreferrer">
-              link to line in github
-            </a>
-            <a href={snippet.href.article} target="_blank" rel="noreferrer">
-              link to article
-            </a>
-          </div>
-        )}
       </div>
       <div className={"cards-container"}>
         {displayProducts.map((product) => (
           <div key={product.name} className={"card"}>
             <h3>{product.name}</h3>
             <p>{product.price}</p>
+            <p>{product.market}</p>
           </div>
         ))}
       </div>
+      {snippet.href && (
+        <div className="links-container">
+          <h3>**{snippet.type}**</h3>
+          <div className="links">
+            <a href={snippet.href.github} target="_blank" rel="noreferrer">
+              View this line on GitHub
+            </a>
+            <a href={snippet.href.article} target="_blank" rel="noreferrer">
+              Read the article
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

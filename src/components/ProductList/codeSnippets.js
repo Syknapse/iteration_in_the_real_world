@@ -4,8 +4,9 @@ const codeSnippets = {
     description: "// Show all products",
   },
   FILTER: {
-    code: 'products.filter( (product) => product.market === "awesomo market"',
-    description: "// Filter all products from the awesomo market",
+    type: "array.filter()",
+    code: 'products.filter( (product) => product.market === "Great Mall")',
+    description: "// Show only products from the Great Mall",
     href: {
       github:
         "https://github.com/Syknapse/iteration_in_the_real_world/blob/main/src/App.js#L7",
