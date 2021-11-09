@@ -1,3 +1,14 @@
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list:after {
+  content: "";
+  height: 30vh;
+  width: 100%;
+}
+
 .buttons-container button {
   padding: 8px;
   min-width: 80px;

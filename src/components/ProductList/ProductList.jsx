@@ -20,7 +20,7 @@ const ProductList = ({ products }) => {
   };
 
   return (
-    <div className="root">
+    <div className="product-list">
       <div className="buttons-container">
         <button onClick={() => handleDisplayAll()}>Show All</button>
         <button onClick={() => handleFilter()}>array.filter()</button>
