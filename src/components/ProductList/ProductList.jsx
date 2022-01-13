@@ -19,11 +19,24 @@ const ProductList = ({ products }) => {
     setSnippet(codeSnippets["FILTER"]);
   };
 
+  const handleMap = () => {
+    const discountedProducts = products.map((product) => {
+      const discountedPrice = product.price - (product.price * 10) / 100;
+      return {
+        ...product,
+        price: discountedPrice.toFixed(2),
+      };
+    });
+    setDisplayProducts(discountedProducts);
+    setSnippet(codeSnippets["MAP"]);
+  };
+
   return (
     <div className="product-list">
       <div className="buttons-container">
         <button onClick={() => handleDisplayAll()}>Show All</button>
         <button onClick={() => handleFilter()}>array.filter()</button>
+        <button onClick={() => handleMap()}>array.map()</button>
       </div>
       <div className="info-container">
         {snippet.description && <p>{snippet.description}</p>}
@@ -33,7 +46,7 @@ const ProductList = ({ products }) => {
         {displayProducts.map((product) => (
           <div key={product.name} className={"card"}>
             <h3>{product.name}</h3>
-            <p>{product.price}</p>
+            <p>{product.price}€</p>
             <p>{product.market}</p>
           </div>
         ))}
