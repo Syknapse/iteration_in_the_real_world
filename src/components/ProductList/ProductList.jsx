@@ -31,12 +31,20 @@ const ProductList = ({ products }) => {
     setSnippet(codeSnippets["MAP"]);
   };
 
+  const handleForEach = () => {
+    products.forEach((product) =>
+      localStorage.setItem(product.name, product.price)
+    );
+    setSnippet(codeSnippets["FOREACH"]);
+  };
+
   return (
     <div className="product-list">
       <div className="buttons-container">
         <button onClick={() => handleDisplayAll()}>Show All</button>
         <button onClick={() => handleFilter()}>array.filter()</button>
         <button onClick={() => handleMap()}>array.map()</button>
+        <button onClick={() => handleForEach()}>array.forEach()</button>
       </div>
       <div className="info-container">
         {snippet.description && <p>{snippet.description}</p>}
